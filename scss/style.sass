@@ -1,32 +1,10 @@
 @import './colors'
 @import './_mixin'
+@import './_global'
 
 *
     padding: 0
     margin: 0
-
-a
-    text-decoration: none
-    color: $third_color
-
-li
-    list-style: none
-
-p
-    margin-top: 15px
-
-.secundary_btn
-    color: $secondary_color
-    border: 1px solid $secondary_color
-    padding: 15px 32px
-    transition: all 0.5s ease
-    text-transform: uppercase
-    &::before
-        content: "\f054"
-        font-family: "Font Awesome 5 Free"
-        font-weight: 900
-        float: right
-        margin-left: 18px
 
 body
     font-family: 'Roboto', sans-serif
@@ -36,15 +14,6 @@ body
     font-weight: 300
     box-sizing: border-box    
 
-.container
-    width: 80%
-    margin: 0 auto
-
-.wrapper
-    width: 100%
-    background: $four_color
-    border-top: 1px solid #e6e6e6
-    border-bottom: 1px solid #e6e6e6
 
 .nav-secundaria
     display: flex
@@ -61,8 +30,11 @@ body
             li
                 a
                     display: block
-                    padding: 0 10px
+                    padding: 0 15px
                     border-right: 1px solid $third_color
+                    transition: color .5s ease
+                    &:hover
+                        color: $secondary_color
 
 .header-botton
     display: flex 
@@ -88,11 +60,16 @@ body
         background: $four_color
         ul
             display: flex
-            padding: 24px
-            a 
-                padding: 12px 13px 18px
-                text-transform: uppercase
-                font-weight: 300
+            li
+                display: flex
+                a 
+                    padding: 23px 18px
+                    text-transform: uppercase
+                    font-weight: 300
+                    border-bottom: 2px solid $four_color
+                    transition: all .5s ease
+                    &:hover
+                        border-bottom: 2px solid $secondary_color
 
 .bottons-wrapper
     padding: 20px 0
@@ -109,17 +86,7 @@ body
     .bottons-container
         display: flex
         justify-content: space-between
-        .primary_btn 
-            background: $secondary_color
-            padding: 15px
-            color: $four_color
-            transition: all 0.5s ease
-            &::before
-                content: "\f078"
-                font-family: "Font Awesome 5 Free"
-                font-weight: 900
-                float: right
-                margin-left: 4px
+       
 
 .offers-grid
     display: grid
@@ -133,26 +100,25 @@ body
         &__image
             img
                 width: 100%
-
-.offer-container__info  
-    padding: 20px   
-    .offer-container__description
-        h3
-            text-transform: capitalize
-            margin-bottom: 7px
-            font-size: 29px
-    .offer-container__wrapper_price
-        display: flex
-        justify-content: space-between
-        padding-top: 85px
-        .offer-container__price
+    .offer-container__info  
+        padding: 20px   
+        .offer-container__description
+            h3
+                text-transform: capitalize
+                margin-bottom: 7px
+                font-size: 29px
+        .offer-container__wrapper_price
             display: flex
-            flex-direction: column
-            span
-                &:nth-child(2)
-                    color: $secondary_color
-                    font-size: 24px
-                    font-weight: bold
+            justify-content: space-between
+            padding-top: 85px
+            .offer-container__price
+                display: flex
+                flex-direction: column
+                span
+                    &:nth-child(2)
+                        color: $secondary_color
+                        font-size: 24px
+                        font-weight: bold
 
 .wrapper-trips-offers
     margin: 60px 0
@@ -164,6 +130,8 @@ body
 
 footer 
     border-top: 1px solid #e6e6e6
+    display: flex
+    flex-direction: column
     .wrapper-footer-conten-01
         padding-top: 40px
         float: left
@@ -171,28 +139,28 @@ footer
         display: inline
         width: 100%
         min-height: 160px
-        padding: 15px 0 125px
+        padding: 15px 0 186px
         background: url(../assets/img/fondoPie1.png) center bottom no-repeat
-        ul 
+        .footer-products
             display: flex
-            justify-content: space-between
-            li
+            &__wrapper
                 display: flex
                 flex-direction: column
+                align-content: center
                 border-right: 1px solid #e6e6e6
-                padding: 22px 52px
-                span
+                padding: 22px 48px
+                .footer-products__content
                     text-align: center
                     &:nth-child(1)
                         color: $secondary_color
                         font-size: 30px
                         padding-bottom: 10px
-        .grid-cards
+        .footer-cards-ads
             display: grid
             grid-template-columns: repeat(3,1fr)
             grid-gap: 30px
             margin-top: 44px
-            .wrapper-card-ads
+            .footer-ad-block
                 position: relative
                 height: 250px
                 padding: 30px
@@ -207,22 +175,87 @@ footer
                     background-image: url(../assets/img/8.jpeg)
                 &:nth-child(3)
                     background-image: url(../assets/img/9.jpeg)
-                &::before
+                &::after
                     content: " "
                     height: 100%
                     width: 100%
                     position: absolute
                     top: 0
                     left: 0
-                    background-image: radial-gradient(ellipse farthest-corner at 45px 45px, #003f718a 0%, rgb(0 0 181 / 20%) 50%, #2196f32e 95%)
-
-                &__text
+                    background-image: linear-gradient(to right, #540000c2, rgba(255, 0, 0, 0))
+                &__container
+                    z-index: 1
+                &__title
                     text-transform: uppercase
                     font-size: 29px
                     font-weight: 300
                 &__info
                     font-size: 20px
-                    margin-top: 0px
+                    margin: 40px 0 15px
                 .secundary_btn
                     border-color: $primary_color
                     color: $primary_color
+        .footer-links
+            display: grid
+            grid-template-columns: repeat(4,1fr)
+            padding: 40px 0 28px
+            &__blocks
+                text-align: center
+                .footer-links__title
+                    color: $secondary_color
+                    text-transform: capitalize
+                .footer-links__list
+                    margin-top: 20px 
+                    li 
+                        margin-top: 5px
+    .footer-content-02
+        background: url(../assets/img/fondoPie2.png) center bottom no-repeat
+        background-size: cover
+        padding-bottom: 27px
+        .footer-top-container
+            display: flex
+            justify-content: space-between
+            &__left
+                display: flex
+                .footer-top-container__icon_wrapper
+                    position: relative
+                    width: 250px
+                    height: fit-content
+                    padding-top: 25px
+                    img
+                        position: absolute
+                        top: 0
+                        left: 0
+                    .footer-top-container__info
+                        display: flex
+                        flex-direction: column
+                        margin: 0
+                        text-align: end
+                        &:nth-child(3)
+                            text-transform: uppercase
+                .quality-wrapper
+                    display: flex
+                    align-items: center
+                    margin-left: 130px
+                    &__icon
+                        font-size: 35px
+                    &__info
+                        margin-left: 20px
+                        p
+                            margin: 0
+        .footer-bottom-container
+            padding-top: 30px
+            display: flex
+            justify-content: space-between
+            .legal-info
+                margin: 0
+                font-size: 17px
+            .social-media-list
+                display: flex
+                margin-top: 5px
+                &__icon
+                    font-size: 29px
+                    color: #67b502
+                    padding: 14px
+                    &:nth-child(1)
+                        padding-left: 0

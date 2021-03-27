@@ -1,7 +1,37 @@
- .primary_btn 
+//  .primary_btn 
+//     background: $secondary_color
+//     padding: 15px
+//     color: $four_color
+//     transition: all 0.5s ease
+//     &::before
+//         content: "\f078"
+//         font-family: "Font Awesome 5 Free"
+//         font-weight: 900
+//         float: right
+//         margin-left: 4px
+
+
+// .secundary_btn
+//     @extend .primary_btn 
+
+a
+    text-decoration: none
+    color: $third_color
+
+li
+    list-style: none
+
+p
+    margin-top: 15px
+
+
+.primary_btn 
     background: $secondary_color
-    padding: 15px
+    padding: 15px 64px
+    border: 1px solid $secondary_color
     color: $four_color
+    cursor: pointer
+    overflow: hidden
     transition: all 0.5s ease
     &::before
         content: "\f078"
@@ -9,7 +39,37 @@
         font-weight: 900
         float: right
         margin-left: 4px
+    &:hover
+        background: none
+        border: 1px solid  $secondary_color
+        color: $secondary_color
 
 
 .secundary_btn
-    @extend .primary_btn 
+    color: $secondary_color
+    border: 1px solid $secondary_color
+    padding: 15px 32px
+    text-transform: uppercase
+    cursor: pointer
+    overflow: hidden
+    transition: all 0.5s ease
+    &::before
+        content: "\f054"
+        font-family: "Font Awesome 5 Free"
+        font-weight: 900
+        float: right
+        margin-left: 18px
+    &:hover
+        background: $secondary_color
+        color: $four_color
+        border-color: $secondary_color
+
+.container
+    width: 80%
+    margin: 0 auto
+
+.wrapper
+    width: 100%
+    background: $four_color
+    border-top: 1px solid #e6e6e6
+    border-bottom: 1px solid #e6e6e6
