@@ -14,12 +14,18 @@ p {
 
 .primary_btn {
   background: #67b502;
-  padding: 15px 64px;
+  padding: 0.9% 0.5%;
+  width: 15%;
   border: 1px solid #67b502;
   color: #ffffff;
   cursor: pointer;
   overflow: hidden;
   transition: all 0.5s ease;
+}
+@media screen and (min-width: 1500px) {
+  .primary_btn {
+    font-size: 14px;
+  }
 }
 .primary_btn::before {
   content: "";

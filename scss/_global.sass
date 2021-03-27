@@ -1,3 +1,4 @@
+@import 'mediaQueries'
 a
     text-decoration: none
     color: $third_color
@@ -11,12 +12,15 @@ p
 
 .primary_btn 
     background: $secondary_color
-    padding: 15px 64px
+    padding: 0.9% 0.5%
+    width: 15%
     border: 1px solid $secondary_color
     color: $four_color
     cursor: pointer
     overflow: hidden
     transition: all 0.5s ease
+    @include desktop
+        font-size: 14px
     &::before
         content: "\f078"
         font-family: "Font Awesome 5 Free"
